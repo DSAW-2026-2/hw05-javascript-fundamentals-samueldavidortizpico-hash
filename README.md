@@ -1,47 +1,57 @@
-# HW05 — JavaScript Fundamentals
+# HW04 — UX + Tailwind CSS
 
-**Week 5 · DSAW · Universidad de La Sabana**
+**Week 4 · DSAW · Universidad de La Sabana**
 
 ## Objective
 
-Add real interactivity to your project page using **vanilla JavaScript** — no libraries, no frameworks.
+Create complete wireframes for your project in Figma and rebuild the landing page with Tailwind CSS, including a working dark mode toggle.
 
 ## Deliverables
 
-### `index.html` (+ external JS or `<script>`)
+### `index.html`
 
-Implement **at least 2 distinct interactive behaviors**. Examples relevant to your project:
-- Navigation menu that opens/closes
-- Form with inline validation that shows errors (no `alert()`)
-- Counter, search, filter, accordion, modal
-- Image preview before upload
-- Anything that improves the user experience
+Rebuild your landing page using **Tailwind CSS** (via CDN or Vite):
+- Use utility classes for **all** styling — no separate custom CSS file
+- Responsive using Tailwind's prefixes: `sm:`, `md:`, `lg:` — no manual media queries
+- Implement a **working dark mode toggle** using Tailwind's `dark:` variant:
+  - There must be a visible button that switches between light and dark mode
+  - The switch must affect background colors, text, and at least one component
 
-**Technical requirements:**
-- Use `addEventListener` for all events — **zero inline handlers** (`onclick="..."`)
-- At least **one custom keyboard shortcut** using `keydown` or `keyup`
-- Real DOM manipulation: select elements and change their content or appearance dynamically
+### `figma-link.txt`
+
+URL to your Figma file containing wireframes for **all main screens** of the project:
+- At least 3 distinct screens
+- Each screen must show at least 3 states: empty, with data, and error/validation
 
 ## Layer 2
 
-The keyboard shortcut must be non-obvious: not just Enter to submit. Examples: `Ctrl+K` to open search, `Escape` to close a modal.
+The dark mode toggle must persist across page reloads using `localStorage`.
 
 ## AI Log (`AI-LOG.md`)
 
-- Did you use AI to write any function? Show the prompt and the result.
-- Which part of the generated code did you not understand immediately?
-- What did you change after testing it and why?
+- Did you use AI to generate Tailwind classes? Did you also use it for the wireframes?
+- What did you learn about Tailwind that you wouldn't have learned if AI had done everything?
 
 ## Deployment
 
-GitHub Pages.
+GitHub Pages. If you use Vite, configure the `base` option in `vite.config.js`.
 
 ## Autograding
 
 The pipeline will check:
-- ✅ `index.html` exists and has content
-- ✅ ESLint passes (`no-var`, `eqeqeq`, no inline handlers)
-- ✅ GitHub Pages responds with HTTP 200
-- ✅ 2 interactive behaviors, keyboard shortcut, no libraries (reviewed by Claude)
+- `index.html` and `figma-link.txt` are present
+- HTMLHint passes with no errors
+- GitHub Pages responds with HTTP 200
+- Tailwind used correctly, dark mode works, wireframes complete (reviewed by Claude)
+# Bitácora de IA 5
 
-> **Submission rule:** If it is not deployed and public, it cannot be graded.
+Utilicé IA para comprender cómo seleccionar elementos del DOM y cómo utilizar
+event listeners para implementar la búsqueda en tiempo real y el atajo de
+teclado Ctrl + K.
+
+## Código sugerido por IA
+
+```javascript
+searchInput.addEventListener("input", () => {
+  // Filtrar películas
+});
